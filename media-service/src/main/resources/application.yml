@@ -1,0 +1,21 @@
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:9988/eureka
+server:
+    port: 8789
+spring:
+    application:
+        name: media-service
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        password: root123
+        url: jdbc:postgresql://localhost:5432/mediadb
+        username: mirazul
+    jpa:
+        hibernate:
+            ddl-auto: create
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        show-sql: false

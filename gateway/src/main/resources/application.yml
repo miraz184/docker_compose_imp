@@ -1,0 +1,24 @@
+server:
+    port: 9889
+
+spring:
+  application:
+    name: gateway
+
+    cloud:
+      gateway:
+        routes:
+          - id: service_channel
+            uri: lb://channel-service
+            predicates:
+              - Path= /channel/**
+
+
+          - id: service_media
+            uri: lb://media-service
+            predicates:
+              - Path= /media/**
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9988/eureka
